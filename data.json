@@ -1,11 +1,5 @@
 [
   { "id": 1, "name": "codex", "lastname": "test" },
   { "id": 2, "name": "cliver", "lastname": "test2" },
-  { "id": 3, "name": "paola", "lastname": "test3" },
-  { "id": 4, "name": "juan", "lastname": "perez" },
-  { "id": 5, "name": "juan", "lastname": "perez" },
-  { "id": 6, "name": "juan", "lastname": "perez" },
-  { "id": 7, "name": "juan", "lastname": "perez" },
-  { "id": 8, "name": "juan", "lastname": "perez" },
-  { "id": 9, "name": "maria", "lastname": "perez" }
+  { "id": 3, "name": "juan", "lastname": "perez" },
 ]
