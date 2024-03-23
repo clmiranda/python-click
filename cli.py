@@ -39,5 +39,46 @@ def users():
     print(table)
 
 
+@cli.command()
+@click.argument("id", type=int)
+def user(id):
+    data = json_operations.read_json()
+    user = next((i for i in data if i["id"] == id), None)
+    if user is None:
+        print(f"User with id {id} not found")
+    else:
+        print(f"{user['id']} - {user['name']} - {user['lastname']}")
+
+
+@cli.command()
+@click.argument("id", type=int)
+@click.option("--name", help="Name of the user")
+@click.option("--lastname", help="Lastname of the user")
+def update(id, name, lastname):
+    data = json_operations.read_json()
+    for user in data:
+        if user["id"] == id:
+            if name is not None:
+                user["name"] = name
+            if lastname is not None:
+                user["lastname"] = lastname
+            break
+    json_operations.write_json(data)
+    print(f"User with id {id} has been updated successfully")
+
+
+@cli.command()
+@click.argument("id", type=int)
+def delete(id):
+    data = json_operations.read_json()
+    user = next((i for i in data if i["id"] == id), None)
+    if user is None:
+        print(f"User with id {id} not found")
+    else:
+        data.remove(user)
+        json_operations.write_json(data)
+        print(f"User with id {id} has been deleted successfully")
+
+
 if __name__ == "__main__":
     cli()
