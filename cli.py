@@ -15,8 +15,8 @@ def cli():
 
 
 @cli.command()
-@click.option("-name", required=True, help="Name of the user")
-@click.option("-lastname", required=True, help="Lastname of the user")
+@click.option("--name", required=True, help="Name of the user")
+@click.option("--lastname", required=True, help="Lastname of the user")
 @click.pass_context
 def new(context, name, lastname):
     users = json_operations.read_json()
