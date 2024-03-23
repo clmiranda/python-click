@@ -1,5 +1,12 @@
 import json_operations
 import click
+from prettytable import PrettyTable
+from prettytable.colortable import ColorTable, Themes
+
+
+table = PrettyTable()
+table = ColorTable(theme=Themes.OCEAN)
+table.field_names = ["id", "name", "lastname"]
 
 
 @click.group()
@@ -28,7 +35,8 @@ def new(context, name, lastname):
 @cli.command()
 def users():
     for user in json_operations.read_json():
-        print(f"{user['id']} - {user['name']} - {user['lastname']}")
+        table.add_row([user["id"], user["name"], user["lastname"]])
+    print(table)
 
 
 if __name__ == "__main__":
