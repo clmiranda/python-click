@@ -4,6 +4,12 @@ This application use the [Python Click Library](https://pypi.org/project/click/)
 
 Use of [Pretty Table Library](https://pypi.org/project/prettytable/) and [Colorama Library](https://pypi.org/project/colorama/) to to display data in tables in an attractive ASCII format and set color to the different results.
 
+To install the necessary libraries, run the following code in the console:
+
+```
+pip install -r requirements.txt
+```
+
 Example of list of users:
 
 ![Example of list of users](img/users.png)
